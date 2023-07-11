@@ -13,7 +13,7 @@ $(function () {
   });
 
   // define variables for current hour using (dayjs) and block hour using (this)
-  var currHour = dayjs().format('H');
+  var currHour = dayjs().format('HH');
   $(".time-block").each(function() {
     var calendarHour = $(this).attr('id').split('-')[1];
     
