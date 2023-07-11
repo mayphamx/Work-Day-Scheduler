@@ -13,21 +13,21 @@ $(function () {
   });
 
   // define variables for current hour using (dayjs) and block hour using (this)
-  var currentHour = dayjs().format('H');
+  var currHour = dayjs().format('H');
   $(".time-block").each(function() {
-    var blockHour = $(this).attr('id').split('-')[1];
+    var calendarHour = $(this).attr('id').split('-')[1];
     
   // TODO: Add code to get any user input that was saved in localStorage
   // define variables to get input text entry from local storage
-    var textEntry = localStorage.getItem(blockHour);
+    var textEntry = localStorage.getItem(calendarHour);
     var textArea = $(this).find('.description');
     textArea.val(textEntry); 
     
   // TODO: Add code to apply the past, present, or future class to each time
   // compare blockhour and current hour from dayjs to apply css per hour
-    if (blockHour < currentHour) {
+    if (calendarHour < currHour) {
       $(this).find('.description').addClass('past');
-    } else if (blockHour === currentHour) {
+    } else if (calendarHour === currHour) {
       $(this).find('.description').addClass('present');
     } else {
       $(this).find('.description').addClass('future');
